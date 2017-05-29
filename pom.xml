@@ -74,6 +74,7 @@
 				<skiptest>true</skiptest>
 				<tomcat.url>http://195.154.9.45:8080/manager/text</tomcat.url>
 				<tomcat.server>DediBox</tomcat.server>
+				<tomcat.path>/MbRss</tomcat.path>
 			</properties>
 		</profile>
 	</profiles>
