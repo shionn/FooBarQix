@@ -63,7 +63,7 @@ public class MagicBazarCrawler {
 	}
 
 	private boolean isIgnored(Element e) {
-		return e.text().contains("Yu-Gi-Oh") || e.text().contains("Final Fantasy");
+		return e.text().contains("Yu-Gi-Oh") || e.text().contains("Final Fantasy") || e.text().contains("L5R");
 	}
 
 	private Date nextHeightDay() {
