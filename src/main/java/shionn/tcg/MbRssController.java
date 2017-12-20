@@ -8,10 +8,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import shionn.tcg.crawler.MagicBazarCrawler;
 import shionn.tcg.pojo.Tournament;
@@ -19,13 +19,13 @@ import shionn.tcg.rss.Channel;
 import shionn.tcg.rss.Item;
 import shionn.tcg.rss.Rss;
 
-@Path("/")
-public class MbService {
+@RestController
+public class MbRssController {
 	private static final SimpleDateFormat RFC822_DATE_FORMAT = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z",
 			Locale.ENGLISH);
 
-	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@ResponseBody
+	@RequestMapping(path = "/mb-rss", produces = { MediaType.APPLICATION_RSS_XML_VALUE })
 	public Rss get() throws IOException, ParseException {
 		List<Item> items = new ArrayList<>();
 		for (Tournament tournament : new MagicBazarCrawler().crawl()) {

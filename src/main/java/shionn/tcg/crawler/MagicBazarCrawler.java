@@ -9,11 +9,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.ws.rs.core.MediaType;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.http.MediaType;
 
 import shionn.tcg.pojo.Tournament;
 
@@ -23,7 +22,7 @@ public class MagicBazarCrawler {
 
 	public List<Tournament> crawl() throws IOException, ParseException {
 		Document doc = Jsoup.connect("https://www.magicbazar.fr/tournament/boutique-annecy")
-				.header("referer", "https://www.magicbazar.fr").header("accept", MediaType.TEXT_HTML)
+				.header("referer", "https://www.magicbazar.fr").header("accept", MediaType.TEXT_HTML_VALUE)
 				.header("user-agent", "Mozilla/5.0").get();
 		List<Tournament> tournaments = new ArrayList<>();
 		for (Element row : doc.select("div.present_tournoi")) {

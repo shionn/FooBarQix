@@ -4,19 +4,5 @@
 	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 
-	<display-name>MbRss</display-name>
-
-	<servlet>
-		<servlet-name>Resteasy</servlet-name>
-		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
-		<init-param>
-			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>shionn.tcg.Services</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Resteasy</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
-
+	<display-name>FooBarQix</display-name>
 </web-app>
