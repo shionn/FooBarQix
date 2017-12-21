@@ -25,9 +25,19 @@ public class PlayerFactory {
 	@Qualifier("wings")
 	private Stats wings;
 
-	@Bean
+	@Bean(name = { "player1" })
 	@SessionScope
-	public Player player() {
+	public Player player1() {
+		return build();
+	}
+
+	@Bean(name = { "player2" })
+	@SessionScope
+	public Player player2() {
+		return build();
+	}
+
+	private Player build() {
 		Player player = new Player();
 		player.setDriver(drivers.get("mario"));
 		player.setKart(karts.get("standard-kart"));

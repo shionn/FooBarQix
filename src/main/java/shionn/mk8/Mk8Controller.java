@@ -30,8 +30,10 @@ public class Mk8Controller {
 	private Stats wings;
 
 	@Autowired
+	@Qualifier("player1")
 	private Player player1;
 	@Autowired
+	@Qualifier("player2")
 	private Player player2;
 
 	@RequestMapping(path = "/mk8", method = RequestMethod.GET)
@@ -43,10 +45,18 @@ public class Mk8Controller {
 
 	@RequestMapping(path = "/mk8", method = RequestMethod.POST)
 	public String post(@RequestParam("driver1") String driver1,
-			@RequestParam("driver2") String driver2) {
+			@RequestParam("driver2") String driver2, @RequestParam("kart1") String kart1,
+			@RequestParam("kart2") String kart2, @RequestParam("tire1") String tire1,
+			@RequestParam("tire2") String tire2, @RequestParam("wing1") String wing1,
+			@RequestParam("wing2") String wing2) {
 		player1.setDriver(drivers.get(driver1));
 		player2.setDriver(drivers.get(driver2));
-
+		player1.setKart(karts.get(kart1));
+		player2.setKart(karts.get(kart2));
+		player1.setTire(tires.get(tire1));
+		player2.setTire(tires.get(tire2));
+		player1.setWing(wings.get(wing1));
+		player2.setWing(wings.get(wing2));
 		return "redirect:/mk8";
 	}
 

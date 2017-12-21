@@ -22,7 +22,7 @@ td, th {
 </head>
 <body>
 
-<form action='<spring:url value="/mk8"/>'>
+<form action='<spring:url value="/mk8"/>' method="post">
 	<table>
 		<thead>
 			<tr>
@@ -48,7 +48,8 @@ td, th {
 		</thead>
 		<tbody>
 			<tr>
-				<td colspan="2">Joueur 1</td>
+				<td rowspan="2"><input type="submit" value="u"></td>
+				<td>Joueur 1</td>
 				<td>${player1.landSpeed}</td>
 				<td>${player1.antiGravSpeed}</td>
 				<td>${player1.waterSpeed}</td>
@@ -63,7 +64,7 @@ td, th {
 				<td>${player1.miniTurbo}</td>
 			</tr>
 			<tr>
-				<td colspan="2">Joueur 2</td>
+				<td>Joueur 2</td>
 				<td>${player2.landSpeed}</td>
 				<td>${player2.antiGravSpeed}</td>
 				<td>${player2.waterSpeed}</td>

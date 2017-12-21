@@ -2,6 +2,7 @@ package shionn.mk8;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Stat {
 	private List<String> names;
@@ -107,8 +108,14 @@ public class Stat {
 	}
 
 	public String getId() {
+		return getIds().stream().sorted().findFirst().orElseThrow(() -> {
+			throw new IllegalStateException();
+		});
+	}
+
+	public List<String> getIds() {
 		return getNames().stream().map(String::toLowerCase).map(s -> s.replaceAll("[^a-z]", "-"))
-				.findFirst().get();
+				.sorted().collect(Collectors.toList());
 	}
 
 }
