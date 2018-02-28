@@ -108,9 +108,8 @@ public class Stat {
 	}
 
 	public String getId() {
-		return getIds().stream().sorted().findFirst().orElseThrow(() -> {
-			throw new IllegalStateException();
-		});
+		return getIds().stream().sorted().findFirst()
+				.orElseThrow(() -> new IllegalStateException());
 	}
 
 	public List<String> getIds() {

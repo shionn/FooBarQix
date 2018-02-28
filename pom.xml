@@ -32,7 +32,8 @@
 				<configuration>
 					<url>${tomcat.url}</url>
 					<server>${tomcat.server}</server>
-					<path>${tomcat.path}</path>
+					<path>/fbq</path>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 
@@ -67,7 +68,6 @@
 				<skiptest>true</skiptest>
 				<tomcat.url>http://51.15.172.54:8080/manager/text</tomcat.url>
 				<tomcat.server>DediBox</tomcat.server>
-				<tomcat.path>/MbRss</tomcat.path>
 			</properties>
 		</profile>
 	</profiles>
